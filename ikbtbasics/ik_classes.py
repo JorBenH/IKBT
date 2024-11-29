@@ -40,7 +40,7 @@ import ikbtbasics.kin_cl as kc
 ((th_1, th_2, th_3, th_4, th_5, th_6)) = sp.symbols(('th_1', 'th_2', 'th_3', 'th_4', 'th_5', 'th_6'))
 ((d_1, d_2, d_3, d_4, d_5, d_6)) = sp.symbols(('d_1', 'd_2', 'd_3', 'd_4', 'd_5', 'd_6'))
 ((h,l_0, l_1, l_2, l_3, l_4, l_5, l_6)) = sp.symbols(('h','l_0', 'l_1', 'l_2', 'l_3', 'l_4', 'l_5', 'l_6'))
-((a_2, a_3)) = sp.symbols(('a_2', 'a_3'))
+((a_1, a_2, a_3, a_5)) = sp.symbols(('a_1', 'a_2', 'a_3', 'a_5'))
 sp.var('l_5 l_6')
 sp.var('th_12, th_23, th_34, th_45, th_56')
 sp.var('th_123,th_234,th_345,th_456')

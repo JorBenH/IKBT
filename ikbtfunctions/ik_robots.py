@@ -35,6 +35,7 @@ def robot_params(name):
     List = ['ICP5p5_A21','KR16', 'Issue4',
             'UR5', 
             'Puma', 'Pumaoffset',
+            'SkoposKt',
             'Chair_Helper', 
             'Bartell',
             'Brad', 
@@ -315,7 +316,25 @@ def robot_params(name):
         variables =  [unknown(th_1), unknown(th_2), unknown(th_3), unknown(th_4), unknown(th_5), unknown(th_6)]
         params = [d_1, a_2, a_3, d_3, d_4,d_6]
         pvals = {d_1:0.6,a_2:0.432, a_3:0.0203, d_3:0.1245, d_4:0.432,d_6:0.25}  # meters
-        
+
+#   Skopos robot from Keidas Technology
+#        
+    if(name == 'SkoposKt'):
+        sp.var('a_1 l_1 th_1 a_2 th_2 th_3 l_4 th_4 a_5 th_5')
+        dh = sp.Matrix([
+            [ sp.pi/2 ,   a_1 ,  l_1 ,     th_1  ],
+            [       0 ,   a_2 ,    0 ,     th_2  ],
+            [ sp.pi/2 ,     0 ,    0 ,     th_3  ],   
+            [-sp.pi/2 ,     0 ,  l_4 ,     th_4  ],      
+            [       0 ,   a_5 ,    0 ,     th_5  ],
+            [       0 ,     0 ,    0 ,       0   ]
+            ])
+        vv = [1,1,1,1,1,1]
+
+        variables =  [unknown(th_1), unknown(th_2), unknown(th_3), unknown(th_4), unknown(th_5)]
+        params = [a_1, l_1, a_2, l_4, a_5]
+        pvals = {a_1:0.024, l_1:0.12, a_2:0.18, l_4:0.25, a_5:0.06}  # meters
+
 
     if(name == 'Chair_Helper'):                
             vv = [0,1,1,1,1,1]   # must be length 5 since 5dof and 5 unks
